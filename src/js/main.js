@@ -12,4 +12,16 @@ $("p").toggleClass("active").addClass("active-1");
 $("p").containsClass("hello");
 
 // ________________
- 
+
+
+function sayHi() {
+    console.log("Hello world");
+}
+
+$("button").on("click", sayHi);
+
+$("button").off("click", sayHi);
+
+$("p").click(function () {
+    $(this).toggleClass("current");
+});

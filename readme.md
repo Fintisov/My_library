@@ -44,3 +44,23 @@
 </ul>
 <pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").containsClass("className");</code></pre>
 <hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").on(handler, callback); – add handler event for element</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").on(handler, callback);</code></pre>
+<hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").off(handler, callback); – remove event on element</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").off(handler, callback);</code></pre>
+<hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").click( callback ); – added callback event at click for element</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").click( callback );</code></pre>
+<hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").click(); – added simulation event click for element</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").click();</code></pre>
+<hr>
