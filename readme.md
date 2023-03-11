@@ -6,17 +6,41 @@
 </ul>
 <pre><code class="has-line-data" data-line-start="6" data-line-end="8">$(selector)
 </code></pre>
+<hr>
 <ul>
 <li class="has-line-data" data-line-start="8" data-line-end="9">$(selector).show() – show selector</li>
 </ul>
 <pre><code class="has-line-data" data-line-start="10" data-line-end="12">$(selector).show()
 </code></pre>
+<hr>
 <ul>
 <li class="has-line-data" data-line-start="12" data-line-end="13">$(selector).hide() – hidden selector</li>
 </ul>
 <pre><code class="has-line-data" data-line-start="14" data-line-end="16">$(selector).hide()
 </code></pre>
+<hr>
 <ul>
 <li class="has-line-data" data-line-start="16" data-line-end="17">$(selector).toggleDisplay() – hidden selector if it’s showing and vice versa</li>
 </ul>
-<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$(selector).toggleDisplay()
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$(selector).toggleDisplay()</code></pre>
+<hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").addClass("className-1", "className-2", ...); – add class name for elements</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").addClass("className-1", "className-2");</code></pre>
+<hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").removeClass("className-1", "className-2", ...); – remove class name in elements</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").removeClass("className-1", "className-2");</code></pre>
+<hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").toggleClass("className"); – toggleClass class name in element</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").toggleClass("className");</code></pre>
+<hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").containsClass("className"); – returns true if the list contains a class</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").containsClass("className");</code></pre>
+<hr>

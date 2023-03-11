@@ -102,6 +102,11 @@ $.prototype.init = function (selector) {
   if (!selector) {
     return this;
   }
+  if (selector.tagName) {
+    this[0] = selector;
+    this.length = 1;
+    return this;
+  }
   Object.assign(this, document.querySelectorAll(selector));
   this.length = document.querySelectorAll(selector).length;
   return this;
@@ -123,9 +128,67 @@ window.$ = $;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core */ "./src/js/lib/core.js");
 /* harmony import */ var _modules_display__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/display */ "./src/js/lib/modules/display.js");
+/* harmony import */ var _modules_classes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/classes */ "./src/js/lib/modules/classes.js");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (_core__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+/***/ }),
+
+/***/ "./src/js/lib/modules/classes.js":
+/*!***************************************!*\
+  !*** ./src/js/lib/modules/classes.js ***!
+  \***************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.addClass = function () {
+  for (var _len = arguments.length, className = new Array(_len), _key = 0; _key < _len; _key++) {
+    className[_key] = arguments[_key];
+  }
+  if (!className) return this;
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].classList) continue;
+    this[i].classList.add(...className);
+  }
+  return this;
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.removeClass = function () {
+  for (var _len2 = arguments.length, className = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+    className[_key2] = arguments[_key2];
+  }
+  if (!className) return this;
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].classList) continue;
+    this[i].classList.remove(...className);
+  }
+  return this;
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleClass = function (className) {
+  if (!className) return this;
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].classList) continue;
+    if (this[i].classList.contains(className)) {
+      this[i].classList.remove(className);
+    } else {
+      this[i].classList.add(className);
+    }
+  }
+  return this;
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.containsClass = function (className) {
+  if (!className) return this;
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].classList) continue;
+    return this[i].classList.contains(className);
+  }
+  return this;
+};
 
 /***/ }),
 
@@ -179,6 +242,15 @@ __webpack_require__.r(__webpack_exports__);
 $("p.active").hide();
 $("p.active").toggleDisplay();
 $("p.active").show();
+
+// ________________
+
+$("p").addClass("hello", "world");
+$("p.active").removeClass("class-1");
+$("p").toggleClass("active").addClass("active-1");
+$("p").containsClass("hello");
+
+// ________________
 
 /***/ })
 
