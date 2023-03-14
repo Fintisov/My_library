@@ -64,3 +64,25 @@
 </ul>
 <pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").click();</code></pre>
 <hr>
+
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").attr(attributeName) - retur value data attribute</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").attr("attributeName");</code></pre>
+<hr>
+
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").attr(attributeName, value) -set attribute value </li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").attr("attributeName", "value")</code></pre>
+<hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").attrRemove(attributeName) - remove attribute</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").attrRemove("attributeName")</code></pre>
+<hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").attrToggle(attributeName, valueFirst, [valueSecond]) - toggle attribute name</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").attrToggle("attributeName", "valueFirst", ["valueSecond"])</code></pre>
+<hr>

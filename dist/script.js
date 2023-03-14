@@ -130,6 +130,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_display__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/display */ "./src/js/lib/modules/display.js");
 /* harmony import */ var _modules_classes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/classes */ "./src/js/lib/modules/classes.js");
 /* harmony import */ var _modules_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/actions */ "./src/js/lib/modules/actions.js");
+/* harmony import */ var _modules_attributes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/attributes */ "./src/js/lib/modules/attributes.js");
+
 
 
 
@@ -172,6 +174,61 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (callba
     }
   }
   console.log(this);
+  return this;
+};
+
+/***/ }),
+
+/***/ "./src/js/lib/modules/attributes.js":
+/*!******************************************!*\
+  !*** ./src/js/lib/modules/attributes.js ***!
+  \******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.attr = function (attributeName, value) {
+  if (!attributeName) return this;
+  for (let i = 0; i < this.length; i++) {
+    if (!value) {
+      if (!this[i].getAttribute || !this[i].getAttribute(attributeName)) {
+        continue;
+      }
+      return this[i].getAttribute(attributeName);
+    } else {
+      if (!this[i].setAttribute) continue;
+      this[i].setAttribute(attributeName, value);
+    }
+  }
+  return this;
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.attrRemove = function (attributeName) {
+  if (!attributeName) return this;
+  for (let i = 0; i < this.length; i++) {
+    if (this[i].removeAttribute) {
+      continue;
+    }
+    this[i].removeAttribute(attributeName);
+  }
+  return this;
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.attrToggle = function (attributeName) {
+  let valueFirst = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  let valueSecond = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
+  if (!attributeName || !valueFirst) return this;
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].setAttribute) continue;
+    if (this[i].hasAttribute(attributeName)) {
+      if (this[i].getAttribute(attributeName) === valueFirst) {
+        this[i].setAttribute(attributeName, valueSecond);
+      } else {
+        this[i].setAttribute(attributeName, valueFirst);
+      }
+    }
+  }
   return this;
 };
 
@@ -249,7 +306,6 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.show = function () {
     if (!this[i].style) continue;
     this[i].style.display = "";
   }
-  ;
   return this;
 };
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.hide = function () {
@@ -280,6 +336,8 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleDisplay = function
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
+
+/*
 $("p.active").hide();
 $("p.active").toggleDisplay();
 $("p.active").show();
@@ -293,13 +351,29 @@ $("p").containsClass("hello");
 
 // ________________
 
+
 function sayHi() {
-  console.log("Hello world");
+    console.log("Hello world");
 }
+
 $("button").on("click", sayHi);
+
 $("button").off("click", sayHi);
+
 $("p").click(function () {
-  $(this).toggleClass("current");
+    $(this).toggleClass("current");
+});
+
+// ________________
+
+*/
+
+console.log($("p").attr("data-close"));
+// $("p").attr("data-close", "1");
+// $("p").attrRemove("data-close");
+$("p").attrToggle("data-close", "x");
+$("button").on("click", () => {
+  $("p").attrToggle("data-close", "value-1", "value-2");
 });
 
 /***/ })

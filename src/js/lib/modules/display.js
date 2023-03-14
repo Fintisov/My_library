@@ -6,7 +6,7 @@ $.prototype.show = function () {
 
         this[i].style.display = "";
     }
-    ;
+
 
     return this;
 };

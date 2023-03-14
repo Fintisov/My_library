@@ -1,5 +1,6 @@
 import "./lib/lib";
 
+/*
 $("p.active").hide();
 $("p.active").toggleDisplay();
 $("p.active").show();
@@ -25,3 +26,16 @@ $("button").off("click", sayHi);
 $("p").click(function () {
     $(this).toggleClass("current");
 });
+
+// ________________
+
+*/
+
+console.log($("p").attr("data-close"));
+// $("p").attr("data-close", "1");
+// $("p").attrRemove("data-close");
+$("p").attrToggle("data-close", "x");
+
+$("button").on("click", ()=> {
+    $("p").attrToggle("data-close", "value-1", "value-2");
+})
