@@ -29,7 +29,6 @@ $("p").click(function () {
 
 // ________________
 
-*/
 
 console.log($("p").attr("data-close"));
 // $("p").attr("data-close", "1");
@@ -39,3 +38,29 @@ $("p").attrToggle("data-close", "x");
 $("button").on("click", ()=> {
     $("p").attrToggle("data-close", "value-1", "value-2");
 })
+
+*/
+
+console.log($("p").html("con"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

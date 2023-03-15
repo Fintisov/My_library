@@ -86,3 +86,13 @@
 </ul>
 <pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").attrToggle("attributeName", "valueFirst", ["valueSecond"])</code></pre>
 <hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").html() - return html content</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").html()</code></pre>
+<hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").html(content) - change html content in elements</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").html("content")</code></pre>
+<hr>
