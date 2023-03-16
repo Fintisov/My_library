@@ -174,6 +174,12 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.eq = function () {
   this.length = 1;
   return this;
 };
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.index = function () {
+  const parentElement = [...this[0].parentElement.children];
+  return parentElement.findIndex(item => {
+    return item === this[0];
+  });
+};
 
 /***/ }),
 
@@ -416,9 +422,15 @@ $("button").on("click", ()=> {
 // ________________
 
 console.log($("p").html("con"));
-*/
+
+// ________________
 
 console.log($("p").eq(0));
+*/
+
+$("p").click(function () {
+  console.log($(this).index());
+});
 
 /***/ })
 

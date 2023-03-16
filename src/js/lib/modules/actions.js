@@ -24,3 +24,11 @@ $.prototype.eq = function (i = 0) {
 
     return this;
 }
+
+$.prototype.index = function () {
+    const parentElement = [...this[0].parentElement.children];
+
+    return parentElement.findIndex((item) => {
+        return item === this[0];
+    });
+}

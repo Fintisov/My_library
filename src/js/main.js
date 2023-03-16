@@ -42,10 +42,15 @@ $("button").on("click", ()=> {
 // ________________
 
 console.log($("p").html("con"));
-*/
+
+// ________________
 
 console.log($("p").eq(0));
+*/
 
+$("p").click(function () {
+    console.log($(this).index())
+})
 
 
 

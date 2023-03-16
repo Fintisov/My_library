@@ -101,3 +101,8 @@
 </ul>
 <pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").eq(1)</code></pre>
 <hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").index() - returned index current element in his parent </li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").index()</code></pre>
+<hr>
