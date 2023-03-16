@@ -39,9 +39,12 @@ $("button").on("click", ()=> {
     $("p").attrToggle("data-close", "value-1", "value-2");
 })
 
-*/
+// ________________
 
 console.log($("p").html("con"));
+*/
+
+console.log($("p").eq(0));
 
 
 
