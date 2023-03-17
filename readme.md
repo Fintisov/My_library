@@ -106,3 +106,8 @@
 </ul>
 <pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").index()</code></pre>
 <hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").find(selector) - Returns the elements found by the selector among those with which you work </li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").find(".class")</code></pre>
+<hr>

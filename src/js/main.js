@@ -46,12 +46,16 @@ console.log($("p").html("con"));
 // ________________
 
 console.log($("p").eq(0));
-*/
+
+// ________________
 
 $("p").click(function () {
     console.log($(this).index())
 })
 
+*/
+
+console.log($("div").find(".more"));
 
 
 

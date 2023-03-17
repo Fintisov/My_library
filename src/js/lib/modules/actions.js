@@ -32,3 +32,31 @@ $.prototype.index = function () {
         return item === this[0];
     });
 }
+
+$.prototype.find = function (selector) {
+    const copyObj = Object.assign({}, this);
+    let counter = 0;
+
+    const clearThis = () => {
+        let thisLength = Object.keys(this);
+
+        for (let i = 0; i < thisLength.length; i++) {
+            delete this[thisLength[i]];
+        }
+    }
+    clearThis();
+
+
+    for (let i = 0; i < copyObj.length; i++) {
+        const arr = copyObj[i].querySelectorAll(selector);
+        if (arr.length === 0) continue;
+
+        for (let i = 0; i < arr.length; i++) {
+           this[counter] = arr[i];
+           counter++
+        }
+    }
+
+    this.length = counter;
+    return this;
+}

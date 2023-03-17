@@ -180,6 +180,27 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.index = function () {
     return item === this[0];
   });
 };
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.find = function (selector) {
+  const copyObj = Object.assign({}, this);
+  let counter = 0;
+  const clearThis = () => {
+    let thisLength = Object.keys(this);
+    for (let i = 0; i < thisLength.length; i++) {
+      delete this[thisLength[i]];
+    }
+  };
+  clearThis();
+  for (let i = 0; i < copyObj.length; i++) {
+    const arr = copyObj[i].querySelectorAll(selector);
+    if (arr.length === 0) continue;
+    for (let i = 0; i < arr.length; i++) {
+      this[counter] = arr[i];
+      counter++;
+    }
+  }
+  this.length = counter;
+  return this;
+};
 
 /***/ }),
 
@@ -426,11 +447,16 @@ console.log($("p").html("con"));
 // ________________
 
 console.log($("p").eq(0));
-*/
+
+// ________________
 
 $("p").click(function () {
-  console.log($(this).index());
-});
+    console.log($(this).index())
+})
+
+*/
+
+console.log($("div").find(".more"));
 
 /***/ })
 
