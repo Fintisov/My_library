@@ -116,3 +116,8 @@
 </ul>
 <pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").closest(".class")</code></pre>
 <hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").sibling(selector) - Found sibling elements of the chosen selector </li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").sibling(".class")</code></pre>
+<hr>

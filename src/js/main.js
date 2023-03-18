@@ -60,7 +60,8 @@ console.log($("div").find(".more"));
 
 */
 
-console.log($(".some").closest(".content"));
+// console.log($(".some").closest(".content"));
+console.log($(".content").sibling());
 
 
 

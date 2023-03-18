@@ -79,3 +79,31 @@ $.prototype.closest = function (selector) {
 
     return this;
 }
+
+$.prototype.sibling = function () {
+    let counter = 0;
+    const copyObj = Object.assign({}, this);
+
+    const clearThis = () => {
+        let thisLength = Object.keys(this);
+
+        for (let i = 0; i < thisLength.length; i++) {
+            delete this[thisLength[i]];
+        }
+    }
+    clearThis();
+
+    for (let i = 0; i < copyObj.length; i++) {
+        const arr = copyObj[i].parentElement.children;
+
+        for (let k = 0; k < arr.length; k++) {
+            if (copyObj[i] === arr[k]) continue;
+
+            this[counter] = arr[k];
+            counter++;
+        }
+    }
+
+    this.length = counter;
+    return this;
+}
