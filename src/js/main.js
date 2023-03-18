@@ -53,12 +53,14 @@ $("p").click(function () {
     console.log($(this).index())
 })
 
-*/
 
 console.log($("div").find(".more"));
 
+// ________________
 
+*/
 
+console.log($(".some").closest(".content"));
 
 
 

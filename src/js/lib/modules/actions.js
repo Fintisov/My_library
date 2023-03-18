@@ -52,11 +52,30 @@ $.prototype.find = function (selector) {
         if (arr.length === 0) continue;
 
         for (let i = 0; i < arr.length; i++) {
-           this[counter] = arr[i];
-           counter++
+            this[counter] = arr[i];
+            counter++
         }
     }
 
     this.length = counter;
+    return this;
+}
+
+$.prototype.closest = function (selector) {
+    let counter = 0;
+
+    for (let i = 0; i < this.length; i++) {
+        if (!this[i].closest(selector)) continue;
+
+        this[counter] = this[i].closest(selector);
+        counter++;
+    }
+
+    for (let i = counter; i < this.length; i++) {
+        delete this[i];
+    }
+
+    this.length = counter;
+
     return this;
 }

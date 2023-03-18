@@ -111,3 +111,8 @@
 </ul>
 <pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").find(".class")</code></pre>
 <hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$("selector").closest(selector) - Returns the closest elements one that finds by the given selector</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").closest(".class")</code></pre>
+<hr>

@@ -201,6 +201,19 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.find = function (selecto
   this.length = counter;
   return this;
 };
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function (selector) {
+  let counter = 0;
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].closest(selector)) continue;
+    this[counter] = this[i].closest(selector);
+    counter++;
+  }
+  for (let i = counter; i < this.length; i++) {
+    delete this[i];
+  }
+  this.length = counter;
+  return this;
+};
 
 /***/ }),
 
@@ -454,9 +467,14 @@ $("p").click(function () {
     console.log($(this).index())
 })
 
-*/
 
 console.log($("div").find(".more"));
+
+// ________________
+
+*/
+
+console.log($(".some").closest(".content"));
 
 /***/ })
 
