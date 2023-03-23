@@ -441,6 +441,15 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.fadeOut = function (dura
     requestAnimationFrame(animate);
   }
 };
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.fadeToggle = function (duration, display, fin) {
+  for (let i = 0; i < this.length; i++) {
+    if (window.getComputedStyle(this[i]).display === "none") {
+      this.fadeIn(duration, display, fin);
+    } else {
+      this.fadeOut(duration, display, fin);
+    }
+  }
+};
 
 /***/ }),
 
@@ -561,6 +570,10 @@ console.log($(".content").sibling());
 // $("div").fadeIn(2000);
 //
 // $("div").fadeOut(2000);
+
+$("button").eq(1).on("click", function () {
+  $("div").eq(2).fadeToggle("1000");
+});
 
 /***/ })
 

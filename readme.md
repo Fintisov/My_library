@@ -131,3 +131,8 @@
 </ul>
 <pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("div").fadeOut(2000, "flex", () => {});</code></pre>
 <hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$(selector).fadeToggle(duration, [display, callback]); - display or hide the matched elements by animating their opacity.</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("div").fadeToggle(2000, "flex", () => {});</code></pre>
+<hr>

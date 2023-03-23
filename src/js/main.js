@@ -66,3 +66,39 @@ console.log($(".content").sibling());
 // $("div").fadeIn(2000);
 //
 // $("div").fadeOut(2000);
+
+$("button").eq(1).on("click", function () {
+    $("div").eq(2).fadeToggle("1000");
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

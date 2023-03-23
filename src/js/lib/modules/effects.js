@@ -55,3 +55,40 @@ $.prototype.fadeOut = function (duration, fin) {
     }
 }
 
+$.prototype.fadeToggle = function (duration, display, fin) {
+    for (let i = 0; i < this.length; i++) {
+        if (window.getComputedStyle(this[i]).display === "none") {
+            this.fadeIn(duration, display, fin)
+        } else {
+            this.fadeOut(duration, display, fin);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
