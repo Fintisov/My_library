@@ -42,11 +42,9 @@ $("button").on("click", ()=> {
 // ________________
 
 console.log($("p").html("con"));
-
 // ________________
 
 console.log($("p").eq(0));
-
 // ________________
 
 $("p").click(function () {
@@ -55,27 +53,16 @@ $("p").click(function () {
 
 
 console.log($("div").find(".more"));
-
 // ________________
+
+
+// console.log($(".some").closest(".content"));
+// ________________
+
+console.log($(".content").sibling());
 
 */
 
-// console.log($(".some").closest(".content"));
-console.log($(".content").sibling());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// $("div").fadeIn(2000);
+//
+// $("div").fadeOut(2000);

@@ -121,3 +121,13 @@
 </ul>
 <pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("selector").sibling(".class")</code></pre>
 <hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$(selector).fadeIn(duration, [display, callback]); - matched elements by fading them to opaque</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("div").fadeIn(2000, "flex", () => {});</code></pre>
+<hr>
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$(selector).fadeOut(duration, [display, callback]); - matched elements by fading them to transparent</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("div").fadeOut(2000, "flex", () => {});</code></pre>
+<hr>
