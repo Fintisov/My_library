@@ -1,12 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 18px;
-}
-
-.container {
-    max-width: 1230px;
-    padding: 0 15px;
-    margin: 0 auto;
-}
+@import "./general/_base.scss";
+@import "./general/_variables.scss";
+@import "./general/_typography.scss";
+@import "./helpers/classes.scss";
+@import "./components/ui.scss";

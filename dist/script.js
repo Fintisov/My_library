@@ -405,7 +405,6 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.animateOverTime = functi
     }
     let timeElapsed = time - timeStart;
     let completion = Math.min(timeElapsed / duration, 1);
-    console.log(time);
     callback(completion);
     if (timeElapsed < duration) {
       requestAnimationFrame(_animateOverTime);
@@ -503,76 +502,14 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (callba
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
-
-/*
-$("p.active").hide();
-$("p.active").toggleDisplay();
-$("p.active").show();
-
-// ________________
-
-$("p").addClass("hello", "world");
-$("p.active").removeClass("class-1");
-$("p").toggleClass("active").addClass("active-1");
-$("p").containsClass("hello");
-
-// ________________
-
-
-function sayHi() {
-    console.log("Hello world");
-}
-
-$("button").on("click", sayHi);
-
-$("button").off("click", sayHi);
-
-$("p").click(function () {
-    $(this).toggleClass("current");
+$("#first").on("click", () => {
+  $("div").eq(1).fadeOut(800);
 });
-
-// ________________
-
-
-console.log($("p").attr("data-close"));
-// $("p").attr("data-close", "1");
-// $("p").attrRemove("data-close");
-$("p").attrToggle("data-close", "x");
-
-$("button").on("click", ()=> {
-    $("p").attrToggle("data-close", "value-1", "value-2");
-})
-
-// ________________
-
-console.log($("p").html("con"));
-// ________________
-
-console.log($("p").eq(0));
-// ________________
-
-$("p").click(function () {
-    console.log($(this).index())
-})
-
-
-console.log($("div").find(".more"));
-// ________________
-
-
-// console.log($(".some").closest(".content"));
-// ________________
-
-console.log($(".content").sibling());
-
-*/
-
-// $("div").fadeIn(2000);
-//
-// $("div").fadeOut(2000);
-
-$("button").eq(1).on("click", function () {
-  $("div").eq(2).fadeToggle("1000");
+$("[data-count='second']").on("click", () => {
+  $("div").eq(2).fadeOut(800);
+});
+$("button").eq(2).on("click", () => {
+  $(".container > div").fadeOut(800);
 });
 
 /***/ })
