@@ -136,3 +136,34 @@
 </ul>
 <pre><code class="has-line-data" data-line-start="18" data-line-end="20">$("div").fadeToggle(2000, "flex", () => {});</code></pre>
 <hr>
+<hr>
+<h2 class="code-line" data-line-start=2 data-line-end=3 ><a id="Method__Usege_2"></a>Components</h2>
+
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$(".selector-wrapper").dropdown(); - initialize dropDown menu on page. 
+   You must specify the same "id" and "data-drop-id"
+</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">
+
+    <div class="dropdown-menu">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuBtn-1">Drop btn</button>
+        <div class="dropdown-menu__list" data-drop-id="dropdownMenuBtn-1">
+            <a href="#" class="dropdown-menu__item">item #1</a>
+            <a href="#" class="dropdown-menu__item">item #2</a>
+            <a href="#" class="dropdown-menu__item">item #3</a>
+        </div>
+    </div>
+
+    <div class="dropdown-menu">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuBtn-2">Drop btn</button>
+        <div class="dropdown-menu__list" data-drop-id="dropdownMenuBtn-2">
+            <a href="#" class="dropdown-menu__item">item #4</a>
+            <a href="#" class="dropdown-menu__item">item #5</a>
+            <a href="#" class="dropdown-menu__item">item #6</a>
+        </div> 
+    </div>
+
+    $(".dropdown-toggle").dropdown();
+</code>
+</pre>

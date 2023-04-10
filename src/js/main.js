@@ -13,3 +13,5 @@ $("[data-count='second']").on("click", () => {
 $("button").eq(2).on("click", () => {
     $(".container > div").fadeOut(800);
 });
+
+$(".dropdown-toggle").dropdown();
