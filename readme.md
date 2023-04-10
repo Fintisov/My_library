@@ -167,3 +167,39 @@
     $(".dropdown-toggle").dropdown();
 </code>
 </pre>
+
+
+
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">$('[data-toggle="modal"]').modal(); - initialize Modal window on page. 
+    - You must specify the same in button trigger "data-target" and modal window "id". 
+    - You mast insert attribute "data-toggle="modal" in button trigger
+</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">
+
+    <a class="card__btn btn btn-primary" data-toggle="modal" data-target="#exampleModal-1" href="#">Link to</a>
+
+    <div class="modal" id="exampleModal-1">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <button class="close" data-close>
+                    <span>&times;</span>
+                </button>
+                <div class="modal__header">
+                    <h4 class="modal__title">Modal title</h4>
+                </div>
+
+                <div class="modal__body">
+                    Lorem ipsum dolor sit amet
+                </div>
+                <div class="modal__footer">
+                    <button class="btn btn-danger" data-close>Close</button>
+                    <button class="btn btn-success" data-close>Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</code>
+</pre>

@@ -30,7 +30,6 @@ $.prototype.click = function (callback) {
         }
     }
 
-    console.log(this)
     return this;
 }
 

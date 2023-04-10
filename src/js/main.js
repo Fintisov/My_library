@@ -15,3 +15,5 @@ $("button").eq(2).on("click", () => {
 });
 
 $(".dropdown-toggle").dropdown();
+
+$('[data-toggle="modal"]').modal();
