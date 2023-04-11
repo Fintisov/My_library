@@ -141,7 +141,7 @@
 
 <ul>
 <li class="has-line-data" data-line-start="16" data-line-end="17">$(".selector-wrapper").dropdown(); - initialize dropDown menu on page. 
-   You must specify the same "id" and "data-drop-id"
+   <br> You must specify the same "id" and "data-drop-id"
 </li>
 </ul>
 <pre><code class="has-line-data" data-line-start="18" data-line-end="20">
@@ -165,15 +165,17 @@
     </div>
 
     $(".dropdown-toggle").dropdown();
+
 </code>
 </pre>
 
-
+<hr>
+<hr>
 
 <ul>
 <li class="has-line-data" data-line-start="16" data-line-end="17">$('[data-toggle="modal"]').modal(); - initialize Modal window on page. 
-    - You must specify the same in button trigger "data-target" and modal window "id". 
-    - You mast insert attribute "data-toggle="modal" in button trigger
+    <br> - You must specify the same in button trigger "data-target" and modal window "id". 
+    <br> - You must insert attribute "data-toggle="modal" in button trigger
 </li>
 </ul>
 <pre><code class="has-line-data" data-line-start="18" data-line-end="20">
@@ -200,6 +202,58 @@
             </div>
         </div>
     </div>
+
+</code>
+</pre>
+
+<hr>
+<hr>
+
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17"> $("#trigger").click(() => $("#trigger").createModal({text: {}, btn: {}}) - initialize dynamic Modal window on page. 
+    <br> - You must specify the same in button trigger "data-target" and modal window "id".
+    <br> - You must initialize the modal with the id you specified for the button
+</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">
+
+    <a class="card__btn btn btn-primary" id="trigger" data-toggle="modal" data-target="#exampleModal-1" href="#">Link to</a>
+
+    <script>
+        $("#trigger").click(() => $("#trigger").createModal({
+            text: {                                 // settongs modal content 
+                title: "Modal title", 
+                text: ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae cumque eaque in ipsa
+                    labore quo quod reprehenderit? Aperiam aut doloremque ea inventore vitae voluptatum? Adipisci
+                    aliquid dolor error quod!`,
+            },
+            btn: {
+                settings: [                     // settings for buttons
+                [                               // settings btn #1
+                    "Close",                  // text in button
+                    ["btn", "btn-danger"],   // class for buttons
+                    true,                   // close button this modal window or not 
+                ],
+            [                                          // settings btn #2
+                    "Save changes",                   // text in button
+                    ["btn", "btn-success", "ml-10"], // class for buttons
+                    false,                          // close button this modal window or not 
+                    () => {                        // cb after click on button                    
+                         alert("Save changes") 
+                    }
+                ],
+            [                                           // settings btn #3
+                    "Another BTN",                     // text in button
+                    ["btn", "btn-warning", "ml-10"],  // class for buttons
+                    false,                           // close button this modal window or not 
+                        () => {                     // cb after click on button                 
+                            alert("Stop");
+                        }
+                    ],
+                ]
+            }
+        }));
+    </script>
 
 </code>
 </pre>

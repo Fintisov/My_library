@@ -119,7 +119,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.dropdown = function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
 
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.modal = function () {
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.modal = function (target) {
   for (let i = 0; i < this.length; i++) {
     Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).click(e => {
       e.preventDefault();
@@ -127,16 +127,70 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.modal = function () {
       document.body.style.overflow = "hidden";
       Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(`${id}`).fadeIn(300);
       Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(`${id} [data-close]`).click(() => {
-        Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(`${id}`).fadeOut(500);
+        Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(id).fadeOut(500);
         document.body.style.overflow = "";
+        if (target) {
+          document.querySelector(id).remove();
+        }
       });
       Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(".modal").click(e => {
         if (e.target.classList.contains("modal")) {
-          Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(`${id}`).fadeOut(500);
+          Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(id).fadeOut(500);
           document.body.style.overflow = "";
+          if (target) {
+            setTimeout(() => {
+              document.querySelector(id).remove();
+            }, 500);
+          }
         }
       });
     });
+  }
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.createModal = function () {
+  let {
+    text,
+    btn
+  } = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  for (let i = 0; i < this.length; i++) {
+    const modal = document.createElement("div");
+    modal.classList.add("modal");
+    modal.setAttribute("id", this[i].getAttribute("data-target").slice(1));
+    modal.innerHTML = `
+             <div class="modal__dialog">
+                <div class="modal__content">
+                    <button class="close" data-close>
+                        <span>&times;</span>
+                    </button>
+                    <div class="modal__header">
+                        <h4 class="modal__title">${text.title}</h4>
+                    </div>
+    
+                    <div class="modal__body">
+                        ${text.body};
+                    </div>
+                    <div class="modal__footer"></div>
+                </div>
+            </div>
+        `;
+    const buttons = [];
+    for (let j = 0; j < btn.settings.length; j++) {
+      const [btnText, btnClassName, btnClose, btnCallBackFun] = [...btn.settings[j]];
+      const button = document.createElement("button");
+      button.textContent = btnText;
+      button.classList.add("btn", ...btnClassName);
+      if (btnClose) {
+        button.setAttribute("data-close", "");
+      }
+      if (btnCallBackFun && typeof btnCallBackFun === "function") {
+        button.addEventListener("click", btnCallBackFun);
+      }
+      buttons.push(button);
+    }
+    modal.querySelector(".modal__footer").append(...buttons);
+    document.body.appendChild(modal);
+    Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).modal(true);
+    Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i].getAttribute("data-targer")).fadeIn(500);
   }
 };
 
@@ -572,6 +626,21 @@ $("button").eq(2).on("click", () => {
 });
 $(".dropdown-toggle").dropdown();
 $('[data-toggle="modal"]').modal();
+$("#trigger").click(() => $("#trigger").createModal({
+  text: {
+    title: "Modal title",
+    text: ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae cumque eaque in ipsa
+                labore quo quod reprehenderit? Aperiam aut doloremque ea inventore vitae voluptatum? Adipisci
+                aliquid dolor error quod!`
+  },
+  btn: {
+    settings: [["Close", ["btn", "btn-danger"], true], ["Save changes", ["btn", "btn-success", "ml-10"], false, () => {
+      alert("Save changes");
+    }], ["Another BTN", ["btn", "btn-warning", "ml-10"], false, () => {
+      alert("Stop");
+    }]]
+  }
+}));
 
 /***/ })
 
