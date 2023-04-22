@@ -256,4 +256,36 @@
     </script>
 
 </code>
+</pre><hr>
+<hr>
+
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17"> $(select-tab-items).tab(); - initialize component tab.
+</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">
+
+        <div class="tab mt-20 block-center">
+            <div class="tab__panel" data-tab-panel>
+                <div class="tab__item tab__item--active">tab-name 1</div>
+                <div class="tab__item">tab-name 2</div>
+                <div class="tab__item">tab-name 3</div>
+            </div>
+            
+            <div class="tab__content tab__content--active">
+                content
+            </div>
+            <div class="tab__content">
+                 content
+            </div>
+            <div class="tab__content">
+                content
+            </div>
+        </div>
+
+    <script>
+        $("[data-tab-panel] .tab__item").tab();
+    </script>
+
+</code>
 </pre>
