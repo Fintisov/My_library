@@ -53,3 +53,6 @@ $("#trigger").click(() => $("#trigger").createModal({
 $("[data-tab-panel] .tab__item").tab();
 
 $(".accordion__head").accordion();
+
+$().get("https://jsonplaceholder.typicode.com/posts", "json")
+    .then(res => console.log(res));

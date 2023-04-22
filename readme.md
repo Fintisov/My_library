@@ -327,3 +327,42 @@
 
 </code>
 </pre>
+
+<hr>
+<hr>
+
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17"> $().get(url, [dataTypeAnswer = ""]); - create get request.
+    <br>  url - url request 
+    <br>  dataTypeAnswer -  type answer; 
+</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">
+
+    <script>
+       $().get("https://jsonplaceholder.typicode.com/posts", "json")
+            .then(res => console.log(res));
+    </script>
+
+</code>
+</pre>
+
+<hr>
+<hr>
+
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17"> $().get(url, [dataTypeAnswer = ""]); - create get request.
+    <br>  url - url request 
+    <br>  dataTypeAnswer -  type answer; 
+    <br>  data - data you want to send; 
+</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">
+
+    <script>
+       $().get("https://jsonplaceholder.typicode.com/posts", "formDate", "json")
+            .then(res => console.log(res));
+    </script>
+
+</code>
+</pre>
