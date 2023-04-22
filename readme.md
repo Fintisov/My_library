@@ -256,7 +256,9 @@
     </script>
 
 </code>
-</pre><hr>
+</pre>
+
+<hr>
 <hr>
 
 <ul>
@@ -285,6 +287,42 @@
 
     <script>
         $("[data-tab-panel] .tab__item").tab();
+    </script>
+
+</code>
+</pre>
+
+<hr>
+<hr>
+
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17"> $(select-tab-items).accordion([ {headActive: "",  contentActive = ""} ]); - initialize component accordion.
+    <br> - You can add your activeClass for "accordion__head" and "accordion__content";
+</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">
+
+    <div class="accordion mt-20 block-center">
+        <div class="accordion__head">
+            <span>Collapse second element</span>
+        </div>
+        <div class="accordion__content">
+            <div class="accordion__inner">
+                content...
+            </div>
+        </div>
+        <div class="accordion__head">
+            <span>Collapse second element</span>
+        </div>
+        <div class="accordion__content">
+            <div class="accordion__inner">
+                content...
+            </div>
+        </div>
+    </div>
+
+    <script>
+       $(".accordion__head").accordion();
     </script>
 
 </code>

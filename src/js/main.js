@@ -51,3 +51,5 @@ $("#trigger").click(() => $("#trigger").createModal({
 }));
 
 $("[data-tab-panel] .tab__item").tab();
+
+$(".accordion__head").accordion();
