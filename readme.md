@@ -366,3 +366,50 @@
 
 </code>
 </pre>
+
+<hr>
+<hr>
+
+<ul>
+<li class="has-line-data" data-line-start="16" data-line-end="17">  $(".carousel").carousel(); - initialize carousel.
+</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="18" data-line-end="20">
+
+    <div class="carousel" id="example">
+
+        <ol class="carousel__indicator">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ol>
+
+        <div class="carousel__inner">
+            <div class="carousel__slides">
+                <div class="carousel__item">
+                    <img src="https://images.wallpaperscraft.ru/image/single/kriakva_utka_ptitsa_908798_3840x2160.jpg" alt="picture">
+                </div>
+                <div class="carousel__item">
+                    <img src="https://images.wallpaperscraft.ru/image/single/toyota_supra_toyota_avtomobil_905778_3840x2160.jpg" alt="picture">
+                </div>
+                <div class="carousel__item">
+                    <img src="https://images.wallpaperscraft.ru/image/single/kofe_pechene_chashka_905731_3840x2160.jpg" alt="picture">
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="carousel__prev" data-slide="prev">
+            <span class="carousel__prev-icon">&lt;</span>
+        </a>
+        <a href="#" class="carousel__next" data-slide="next">
+            <span class="carousel__next-icon">&gt;</span>
+        </a>
+
+    </div>
+
+    <script>
+            $(".carousel").carousel();
+    </script>
+
+</code>
+</pre>

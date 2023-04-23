@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="container">
     <button class="btn btn-primary m20" id="first">Fade out first text</button>
     <button class="btn btn-dark m20" data-count="second">Fade out second text</button>
@@ -36,8 +35,6 @@
     </div>
 
     <!--    Card -->
-
-
     <div class="goods d-flex f-space-around">
 
         <div class="card">
@@ -71,7 +68,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Modal -->
 
@@ -121,7 +117,6 @@
         </div>
     -->
 
-
     <!-- Tabs -->
     <div class="tab mt-20 block-center">
         <div class="tab__panel" data-tab-panel>
@@ -146,7 +141,6 @@
     </div>
 
     <!-- Accordion -->
-
     <div class="accordion mt-20 block-center">
         <div class="accordion__head">
             <span>Collapse second element</span>
@@ -169,8 +163,36 @@
             </div>
         </div>
     </div>
-</div>
 
+    <!-- Carousel   -->
+    <div class="carousel" id="example">
+        <ol class="carousel__indicator">
+            <li class="active" data-slide-to="1"></li>
+            <li data-slide-to="2"></li>
+            <li data-slide-to="3"></li>
+        </ol>
+        <div class="carousel__inner">
+            <div class="carousel__slides">
+                <div class="carousel__item">
+                    <img src="https://images.wallpaperscraft.ru/image/single/kriakva_utka_ptitsa_908798_3840x2160.jpg" alt="picture">
+                </div>
+                <div class="carousel__item">
+                    <img src="https://images.wallpaperscraft.ru/image/single/toyota_supra_toyota_avtomobil_905778_3840x2160.jpg" alt="picture">
+                </div>
+                <div class="carousel__item">
+                    <img src="https://images.wallpaperscraft.ru/image/single/kofe_pechene_chashka_905731_3840x2160.jpg" alt="picture">
+                </div>
+            </div>
+        </div>
+        <a href="#" class="carousel__prev" data-slide="prev">
+            <span class="carousel__prev-icon">&lt;</span>
+        </a>
+        <a href="#" class="carousel__next" data-slide="next">
+            <span class="carousel__next-icon">&gt;</span>
+        </a>
+    </div>
+
+</div>
 <script src='script.js'></script>
 </body>
 </html>

@@ -10,5 +10,6 @@ import "./components/modal";
 import "./components/tab";
 import "./components/accordion";
 import "./services/request";
+import "./components/carousel";
 
 export default $;

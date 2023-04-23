@@ -1,4 +1,5 @@
 import "./lib/lib";
+import $ from "./lib/core";
 
 $("#first").on("click", () => {
     $("div").eq(1).fadeOut(800);
@@ -54,5 +55,7 @@ $("[data-tab-panel] .tab__item").tab();
 
 $(".accordion__head").accordion();
 
-$().get("https://jsonplaceholder.typicode.com/posts", "json")
-    .then(res => console.log(res));
+// $().get("https://jsonplaceholder.typicode.com/posts", "json")
+//     .then(res => console.log(res));
+
+$(".carousel").carousel();

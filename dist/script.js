@@ -117,6 +117,75 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.accordion = function () 
 
 /***/ }),
 
+/***/ "./src/js/lib/components/carousel.js":
+/*!*******************************************!*\
+  !*** ./src/js/lib/components/carousel.js ***!
+  \*******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.carousel = function () {
+  for (let i = 0; i < this.length; i++) {
+    const width = window.getComputedStyle(this[i].querySelector(".carousel__inner")).width;
+    const slides = this[i].querySelectorAll(".carousel__item");
+    const slidesField = this[i].querySelector(".carousel__slides");
+    const dots = this[i].querySelectorAll(".carousel__indicator li");
+    slidesField.style.width = `${100 * slides.length}%`;
+    slides.forEach(elem => elem.style.width = width);
+    let offset = 0;
+    let slideIndex = 0;
+    Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i].querySelector('[data-slide="next"]')).on("click", e => {
+      e.preventDefault();
+      if (offset === +width.replace(/\D/g, "") * (slides.length - 1)) {
+        offset = 0;
+      } else {
+        offset += +width.replace(/\D/g, "");
+      }
+      slidesField.style.transform = `translateX(-${offset}px)`;
+      if (slideIndex === slides.length - 1) {
+        slideIndex = 0;
+      } else {
+        slideIndex++;
+      }
+      dots.forEach(elem => elem.classList.remove("active"));
+      dots[slideIndex].classList = "active";
+    });
+    Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i].querySelector('[data-slide="prev"]')).on("click", e => {
+      e.preventDefault();
+      if (offset === 0) {
+        offset = +width.replace(/\D/g, "") * (slides.length - 1);
+      } else {
+        offset -= +width.replace(/\D/g, "");
+      }
+      slidesField.style.transform = `translateX(-${offset}px)`;
+      if (slideIndex === 0) {
+        slideIndex = slides.length - 1;
+      } else {
+        slideIndex--;
+      }
+      dots.forEach(elem => elem.classList.remove("active"));
+      dots[slideIndex].classList = "active";
+    });
+    const indicators = this[i].querySelectorAll(".carousel__indicator > li");
+    indicators.forEach(elem => {
+      elem.addEventListener("click", event => {
+        let currentSlideNum = Array.from(indicators).findIndex(item => item === event.target);
+        offset = +width.replace(/\D/g, "") * currentSlideNum;
+        slideIndex = currentSlideNum;
+        slidesField.style.transform = `translateX(-${offset}px)`;
+        dots.forEach(elem => elem.classList.remove("active"));
+        dots[currentSlideNum].classList = "active";
+      });
+    });
+  }
+};
+
+/***/ }),
+
 /***/ "./src/js/lib/components/dropdown.js":
 /*!*******************************************!*\
   !*** ./src/js/lib/components/dropdown.js ***!
@@ -300,6 +369,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_tab__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/tab */ "./src/js/lib/components/tab.js");
 /* harmony import */ var _components_accordion__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/accordion */ "./src/js/lib/components/accordion.js");
 /* harmony import */ var _services_request__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./services/request */ "./src/js/lib/services/request.js");
+/* harmony import */ var _components_carousel__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/carousel */ "./src/js/lib/components/carousel.js");
+
 
 
 
@@ -728,19 +799,21 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.post = async function (u
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
+/* harmony import */ var _lib_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/core */ "./src/js/lib/core.js");
 
-$("#first").on("click", () => {
-  $("div").eq(1).fadeOut(800);
+
+Object(_lib_core__WEBPACK_IMPORTED_MODULE_1__["default"])("#first").on("click", () => {
+  Object(_lib_core__WEBPACK_IMPORTED_MODULE_1__["default"])("div").eq(1).fadeOut(800);
 });
-$("[data-count='second']").on("click", () => {
-  $("div").eq(2).fadeOut(800);
+Object(_lib_core__WEBPACK_IMPORTED_MODULE_1__["default"])("[data-count='second']").on("click", () => {
+  Object(_lib_core__WEBPACK_IMPORTED_MODULE_1__["default"])("div").eq(2).fadeOut(800);
 });
-$("button").eq(2).on("click", () => {
-  $(".container > div").fadeOut(800);
+Object(_lib_core__WEBPACK_IMPORTED_MODULE_1__["default"])("button").eq(2).on("click", () => {
+  Object(_lib_core__WEBPACK_IMPORTED_MODULE_1__["default"])(".container > div").fadeOut(800);
 });
-$(".dropdown-toggle").dropdown();
-$('[data-toggle="modal"]').modal();
-$("#trigger").click(() => $("#trigger").createModal({
+Object(_lib_core__WEBPACK_IMPORTED_MODULE_1__["default"])(".dropdown-toggle").dropdown();
+Object(_lib_core__WEBPACK_IMPORTED_MODULE_1__["default"])('[data-toggle="modal"]').modal();
+Object(_lib_core__WEBPACK_IMPORTED_MODULE_1__["default"])("#trigger").click(() => Object(_lib_core__WEBPACK_IMPORTED_MODULE_1__["default"])("#trigger").createModal({
   text: {
     title: "Modal title",
     text: ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae cumque eaque in ipsa
@@ -755,9 +828,13 @@ $("#trigger").click(() => $("#trigger").createModal({
     }]]
   }
 }));
-$("[data-tab-panel] .tab__item").tab();
-$(".accordion__head").accordion();
-$().get("https://jsonplaceholder.typicode.com/posts", "json").then(res => console.log(res));
+Object(_lib_core__WEBPACK_IMPORTED_MODULE_1__["default"])("[data-tab-panel] .tab__item").tab();
+Object(_lib_core__WEBPACK_IMPORTED_MODULE_1__["default"])(".accordion__head").accordion();
+
+// $().get("https://jsonplaceholder.typicode.com/posts", "json")
+//     .then(res => console.log(res));
+
+Object(_lib_core__WEBPACK_IMPORTED_MODULE_1__["default"])(".carousel").carousel();
 
 /***/ })
 
